@@ -1,7 +1,8 @@
 // src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'; // You can create this file for global styles if needed
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import './index.css';
 import App from './App';
 
 ReactDOM.render(
