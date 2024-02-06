@@ -1,6 +1,6 @@
 // src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import PetListing from './components/PetListing';
 import PetDetails from './components/PetDetails';
@@ -10,13 +10,13 @@ import UserPetListing from './components/UserPetListing';
 function App() {
   return (
     <Router>
-      <Switch>
+      <Routes>
         <Route exact path="/" component={Home} />
         <Route exact path="/pets" component={PetListing} />
         <Route path="/pets/:id" component={PetDetails} />
         <Route path="/order" component={OrderForm} />
         <Route path="/user/pet-listing" component={UserPetListing} />
-      </Switch>
+      </Routes>
     </Router>
   );
 }
