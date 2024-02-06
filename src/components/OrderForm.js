@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Razorpay } from 'razorpay';
 
 function OrderForm() {
   const [formData, setFormData] = useState({
@@ -21,10 +20,7 @@ function OrderForm() {
     e.preventDefault();
 
     // Create a new instance of Razorpay
-    const razorpay = new Razorpay({
-      key_id: 'YOUR_RAZORPAY_KEY_ID',
-      key_secret: 'YOUR_RAZORPAY_KEY_SECRET',
-    });
+ 
 
     // Prepare the payment options
     const options = {
@@ -39,15 +35,6 @@ function OrderForm() {
       },
     };
 
-    try {
-      // Create a Razorpay order
-      const order = await razorpay.orders.create(options);
-
-      // Redirect to Razorpay checkout page
-      razorpay.createPayment(order);
-    } catch (error) {
-      console.error('Error occurred while creating Razorpay order:', error);
-    }
   };
 
   return (
